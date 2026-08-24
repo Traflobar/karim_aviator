@@ -351,10 +351,15 @@
                 
                 if (currentGame === 'aviator') {
                     let multi;
-                    // Force the first free prediction (when freeUsesRemaining === 2) to be 2.22x
+                    // Force the first free prediction (when freeUsesRemaining === 2) to be 2.48x
                     if (freeUsesRemaining === 2) {
+                        multi = 2.48;
+                    } 
+                    // Force the second free prediction (when freeUsesRemaining === 1) to be 2.22x
+                    else if (freeUsesRemaining === 1) {
                         multi = 2.22;
-                    } else {
+                    } 
+                    else {
                         multi = (Math.random() < 0.7) ? 
                                     (Math.random() * (2.5 - 1.1) + 1.1) : 
                                     (Math.random() * (10.0 - 2.5) + 2.5);
